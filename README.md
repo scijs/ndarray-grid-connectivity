@@ -2,11 +2,11 @@
 
 > Extract grid connectivity from an ndarray, presumably for drawing
 
+[![Experimental][stability-experimental]][stability-url]
 [![Build Status][travis-image]][travis-url]
 [![npm version][npm-image]][npm-url]
 [![Dependency Status][david-dm-image]][david-dm-url]
 [![Semistandard Style][semistandard-image]][semistandard-url]
-
 
 ## Introduction
 
@@ -21,6 +21,14 @@ Finally, if you use the connectivity pairs with OpenGL, you will need the
 `oes_element_index_uint` extension if the size of the indices exceeds `2^16`.
 
 ## Example
+
+The image below shows a 5 &times; 81 &times; 41 volumetric grid computed with transfinite interpolation and drawn with [regl](https://github.com/mikolalysenko/regl). The stride preserves smooth edges without actually plotting a a dense internal grid. The edges drawn in red represent the control curves and are plotted separately.
+
+<p align="center">
+  <img src="images/shape.png" width="500" alt="Contours extracted from a volumetric geometry">
+</p>
+
+For the simple example of a 2 &times; 2 grid in three spatial dimensions:
 
 ```javascript
 var grid = require('ndarray-grid-connectivity');
@@ -42,6 +50,8 @@ A.stride[2]
 
 
 ## Installation
+
+Will publish to npm, pending additional testing.
 
 ```bash
 $ npm install ndarray-grid-connectivity
